@@ -1,0 +1,18 @@
+<div class="row">
+  <h1>Add New Restaurant</h1>
+</div>
+<div class="row">
+  <%= simple_form_for [@restaurant] do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category, placeholder: 'Category', collection: ['chinese', 'italian', 'japanese', 'french', 'belgian'], prompt: "Select category" %>
+    </div>
+    <%= f.submit "Add restaurant", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<div class="row">
+  <%= link_to "<< back", restaurants_path %>
+</div>
+
